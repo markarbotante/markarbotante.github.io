@@ -136,8 +136,22 @@ function createMountainRange(mountainAmount, height, color) {
 function createArkMountain(mountainAmount, color) {
     const mountainWidth = canvas.width / mountainAmount
     c.beginPath()
-    c.arc(canvas.width / 2, canvas.height, canvas.width / 3, 0, Math.PI, Math.PI)
+    c.arc(canvas.width / 2, canvas.height/2 , canvas.width / 10, 0, Math.PI*2)
+    c.fillStyle = '#272425'
+    c.fill()
+    c.stroke()
+    c.closePath()
+
+    c.beginPath()
+    c.arc(canvas.width / 2, canvas.height/2 - 10, canvas.width / 11, 0, Math.PI*2)
     c.fillStyle = color
+    c.fill()
+    c.stroke()
+    c.closePath()
+
+    c.beginPath()
+    c.arc(canvas.width / 2, canvas.height/2 -50, canvas.width / 10, 0, Math.PI*2)
+    c.fillStyle = '#272425'
     c.fill()
     c.stroke()
     c.closePath()
@@ -181,6 +195,8 @@ function animate() {
     c.font = "18px Arial";
     c.strokeText("markarbotante@gmail.com", 10, 80);
     c.strokeText("0926 453 0263", 10, 110);
+
+    createArkMountain(1,'white')
 
 
     c.fillStyle = 'black'
